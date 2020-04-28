@@ -19,7 +19,7 @@
         android:id="@+id/newsrecyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="26dp"
         android:paddingBottom="60dp"/>
 
