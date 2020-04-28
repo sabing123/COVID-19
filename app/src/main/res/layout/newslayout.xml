@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/newsbglayout"
+    android:layout_margin="10dp">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:id="@+id/etnewstitle"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:justificationMode="inter_word"
+        android:textColor="#ff5e6c"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Source"
+        android:id="@+id/etnewssource"
+        android:justificationMode="inter_word"
+        android:textSize="18dp"
+        android:layout_margin="10dp"
+        android:textColor="#c89666"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Summary"
+        android:id="@+id/etnewssummary"
+        android:textSize="16dp"
+        android:layout_margin="10dp"
+        android:justificationMode="inter_word"
+        android:textColor="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="URL"
+        android:textSize="15dp"
+        android:id="@+id/etnewsurl"
+        android:layout_margin="10dp"
+        android:linksClickable="true"
+        android:autoLink="phone|web"
+        />
+
+
+
+</LinearLayout>

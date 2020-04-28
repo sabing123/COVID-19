@@ -1,5 +1,6 @@
 package com.example.covid_19.ui.home;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -89,27 +90,17 @@ public class HomeFragment extends Fragment {
     }
 
     private void showdetails() {
-
+        final ProgressDialog progressDialog = new ProgressDialog(getContext());
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
         String details;
         String image;
         Corona corona = new Corona();
-//        try {
-//            image = corona.execute("https://covid19.mathdro.id/api/og").get();
-//            Log.i("imagedata",image);
-//            //JSON
-//            JSONObject jsonObject = new JSONObject(image);
-//
-//        }catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
-
         try {
             details = corona.execute("https://covid19.mathdro.id/api?fbclid=IwAR0ClbfIuCJZrZqisIvTxXl7GROSEANVfMTw2WD5HIU23rR10jrO9VNSfiI").get();
 
             //First we will check data is retrieve successfully or not
             Log.i("contentData", details);
-
 
             //JSON
             JSONObject jsonObject = new JSONObject(details);
@@ -138,7 +129,7 @@ public class HomeFragment extends Fragment {
             dvalue = maindeaths.getString("value");
             Log.i("value", deaths);
             text_death.setText(dvalue);
-
+            progressDialog.dismiss();
 
 //            String image = jsonObject.getString("image");
 

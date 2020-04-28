@@ -4,6 +4,8 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
+
+
     defaultConfig {
         applicationId "com.example.covid_19"
         minSdkVersion 22
@@ -11,6 +13,8 @@ android {
         versionCode 1
         versionName "1.0"
 
+        testApplicationId "com.COVID_19.app.test"
+        testInstrumentationRunner "com.covid_19.app.test.Instrumentation"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -18,6 +22,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        sourceSets {
+            androidTest {
+                assets.srcDirs = ['src/androidTest/assets']
+            }
         }
     }
 
@@ -39,5 +48,14 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+
+//Test Dependencies
+    androidTestImplementation "io.cucumber:cucumber-android:4.2.0"
+    androidTestImplementation 'info.cukes:cucumber-picocontainer:1.2.5'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test:rules:1.1.0'
+    androidTestUtil 'androidx.test:orchestrator:1.1.0'
+    debugImplementation 'androidx.fragment:fragment-testing:1.2.0'
 
 }
