@@ -1,5 +1,6 @@
 package com.example.covid_19.API;
 import com.example.covid_19.Response.JSONResponse;
+import com.example.covid_19.model.Nepalidetails;
 import com.example.covid_19.model.listofcountry;
 import java.util.List;
 import retrofit2.Call;
@@ -11,4 +12,8 @@ public interface LOC {
 
     @GET("news")
     Call<JSONResponse> getJSON();
+
+    @GET("data/nepal")
+    Call<Nepalidetails> getnepal();
+
 }

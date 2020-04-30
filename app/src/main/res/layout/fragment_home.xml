@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#ffffff"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <GridLayout
             android:layout_width="wrap_content"
@@ -77,12 +77,12 @@
 
             <TextView
 
-                android:text="Recovered"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:text="Recovered"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -95,12 +95,12 @@
             android:id="@+id/text_death"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="-20dp"
             android:layout_marginEnd="8dp"
             android:text="data"
-            android:layout_gravity="center"
             android:textAlignment="center"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -114,12 +114,244 @@
             android:layout_height="125dp"
             android:src="@drawable/con4" />
 
-        <ImageView
-            android:id="@+id/chartimgview"
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/covid19" />
+
+            />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp">
+
+                <ImageView
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="108dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/nepal" />
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="140dp"
+                    android:layout_height="150dp"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginTop="7dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/nepallogo" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Tested total"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tvnepaltotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="270dp"
+                    android:layout_marginTop="8dp"
+                    android:text="no data"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="28dp"
+                    android:text="Tested positive"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tvnepalpositive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="270dp"
+                    android:layout_marginTop="28dp"
+                    android:text="no data"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="47dp"
+                    android:text="Tested Negative"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tvnepalnegative"
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="270dp"
+                    android:layout_marginTop="47dp"
+                    android:text="no data"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+
+                <TextView
+
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="67dp"
+                    android:text="In Isolation"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tvisolation"
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="270dp"
+                    android:layout_marginTop="67dp"
+                    android:text="no data"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+
+                <TextView
+
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="87dp"
+                    android:text="Quarantined"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tvnepalquarantined"
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="270dp"
+                    android:layout_marginTop="87dp"
+                    android:text="no data"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+
+                <TextView
+
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="107dp"
+                    android:text="Recovered"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:id="@+id/tvnepalrecovered"
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="270dp"
+                    android:layout_marginTop="107dp"
+                    android:text="no data"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="127dp"
+                    android:text="Deaths"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tvnepaldeaths"
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="270dp"
+                    android:layout_marginTop="127dp"
+                    android:text="no data"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="147dp"
+                    android:text="RDT"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tvnepalrdt"
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="270dp"
+                    android:layout_marginTop="147dp"
+                    android:text="no data"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="167dp"
+                    android:text="More at : "
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tvinformationurl"
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginTop="167dp"
+                    android:text="URL "
+                    android:textColor="#000000"
+                    android:autoLink="phone|web"
+                    android:textSize="15dp" />
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 </ScrollView>
 
