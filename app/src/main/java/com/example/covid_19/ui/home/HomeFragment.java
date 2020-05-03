@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
 
 //    for nepali details
         private TextView tvnepaltotal,tvnepalpositive,tvnepalnegative,tvisolation,
-        tvnepalquarantined,tvnepalrecovered,tvnepalrdt,tvnepaldeaths,tvurl;
+        tvnepalquarantined,tvnepalrecovered,tvnepalrdt,tvnepaldeaths;
 
     class Corona extends AsyncTask<String, Void, String> {// first String means Url is in string, Void mean nothing, Third String means return type will be in string
 
@@ -92,7 +92,7 @@ public class HomeFragment extends Fragment {
 
         text_conformed = root.findViewById(R.id.text_confirmed);
         text_recovered = root.findViewById(R.id.text_recovered);
-        text_death = root.findViewById(R.id.text_death);
+       // text_death = root.findViewById(R.id.text_death);
 
 
         tvnepaltotal = root.findViewById(R.id.tvnepaltotal);
@@ -103,7 +103,6 @@ public class HomeFragment extends Fragment {
         tvnepalquarantined = root.findViewById(R.id.tvnepalquarantined);
         tvnepalrecovered = root.findViewById(R.id.tvnepalrecovered);
         tvnepalrdt = root.findViewById(R.id.tvnepalrdt);
-        tvurl = root.findViewById(R.id.tvinformationurl);
 
         showdetails();
 
@@ -115,7 +114,7 @@ public class HomeFragment extends Fragment {
 
     private void shownepaldetail() {
         LOC loc = com.example.covid_19.URL.getInstance().create(LOC.class);
-        Call<Nepalidetails> nepalidetailsCall = loc.getnepal();
+        final Call<Nepalidetails> nepalidetailsCall = loc.getnepal();
         nepalidetailsCall.enqueue(new Callback<Nepalidetails>() {
             @Override
             public void onResponse(Call<Nepalidetails> call, Response<Nepalidetails> response) {
@@ -125,7 +124,7 @@ public class HomeFragment extends Fragment {
                 }
                 String total = "", positive = "", negative = "",
                         deaths = "", recovered = "", quarantined = "",
-                        isolation = "", rdt = "", url = "";
+                        isolation = "", rdt = "";
 
                 total += response.body().getTested_total();  tvnepaltotal.setText(total);
                 positive += response.body().getTested_positive(); tvnepalpositive.setText(positive);
@@ -135,7 +134,7 @@ public class HomeFragment extends Fragment {
                 quarantined += response.body().getQuarantined(); tvnepalquarantined.setText(quarantined);
                 isolation += response.body().getIn_isolation(); tvisolation.setText(isolation);
                 rdt += response.body().getTested_rdt(); tvnepalrdt.setText(rdt);
-                url += response.body().getUrl(); tvurl.setText(url);
+
 
             }
 
@@ -191,7 +190,7 @@ public class HomeFragment extends Fragment {
             JSONObject maindeaths = new JSONObject(deaths);
             dvalue = maindeaths.getString("value");
             Log.i("value", deaths);
-            text_death.setText(dvalue);
+           // text_death.setText(dvalue);
             progressDialog.dismiss();
 
 //            String image = jsonObject.getString("image");
