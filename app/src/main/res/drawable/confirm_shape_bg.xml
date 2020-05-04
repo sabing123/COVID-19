@@ -5,7 +5,7 @@
         >
     <corners
         android:radius="0dp"
-        android:topLeftRadius="50dp" />
+        android:topLeftRadius="10dp" />
 
     <gradient
         android:angle="45"
