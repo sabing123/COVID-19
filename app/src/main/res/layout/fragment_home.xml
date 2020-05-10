@@ -41,10 +41,11 @@
 
         </RelativeLayout>
 
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-92dp">
+            android:layout_height="430dp"
+            android:layout_marginTop="-130dp">
 
 
             <RelativeLayout
@@ -52,8 +53,8 @@
                 android:layout_height="110dp"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-40dp"
-                android:layout_marginBottom="65dp"
+                android:layout_marginTop="-30dp"
+                android:layout_marginBottom="250dp"
                 android:background="@drawable/confirm_shape_bg">
 
                 <TextView
@@ -97,7 +98,7 @@
                 android:layout_marginLeft="200dp"
                 android:layout_marginTop="-110dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="67dp"
+                android:layout_marginBottom="250dp"
                 android:background="@drawable/recovered_shape_bg">
 
 
@@ -122,8 +123,50 @@
                     android:src="@drawable/con2" />
             </RelativeLayout>
 
-        </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="165dp"
+                android:layout_height="110dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-40dp"
+                android:layout_marginEnd="113dp"
+                android:layout_marginBottom="128dp"
+                android:background="@drawable/confirm_shape_bg">
 
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="165dp"
+                android:layout_height="110dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-40dp"
+                android:layout_marginEnd="233dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/confirm_shape_bg">
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="165dp"
+                android:layout_height="110dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-40dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/confirm_shape_bg">
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"

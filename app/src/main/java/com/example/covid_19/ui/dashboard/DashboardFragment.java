@@ -51,6 +51,9 @@ public class DashboardFragment extends Fragment {
     }
 
     private void listofcon() {
+
+
+
         listofcountries = new ArrayList<>();
         LOC loc = URL.getInstance().create(LOC.class);
       Call<List<listofcountry>> listCall = loc.getList();
