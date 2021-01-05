@@ -1,34 +1,30 @@
 package com.example.covid_19.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class listofcountry {
 
     private String country;
-    private  String newCases;
+    private String newCases;
     private String totalCases;
     private String totalRecovered;
     private String totalDeaths;
     private String activeCases;
-    private String flag;
+    private countryInfo countryInfo;
 
-
-
-    public listofcountry(String country, String newCases, String totalCases, String totalRecovered, String totalDeaths, String activeCases, String flag) {
+    public listofcountry(String country, String newCases, String totalCases, String totalRecovered, String totalDeaths, String activeCases, com.example.covid_19.model.countryInfo countryInfo) {
         this.country = country;
         this.newCases = newCases;
         this.totalCases = totalCases;
         this.totalRecovered = totalRecovered;
         this.totalDeaths = totalDeaths;
         this.activeCases = activeCases;
-        this.flag = flag;
-
+        this.countryInfo = countryInfo;
     }
 
-    public String getFlag() {
-        return flag;
-    }
-
-    public void setFlag(String flag) {
-        this.flag = flag;
+    public com.example.covid_19.model.countryInfo getCountryInfo() {
+        return countryInfo;
     }
 
     public String getCountry() {
@@ -78,4 +74,5 @@ public class listofcountry {
     public void setActiveCases(String activeCases) {
         this.activeCases = activeCases;
     }
+
 }

@@ -1,8 +1,6 @@
 package com.example.covid_19;
 
 import android.content.Context;
-import android.graphics.BitmapFactory;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.covid_19.model.listofcountry;
 import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
@@ -25,9 +20,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     Context mContext;
     List<listofcountry> listList;
 
+
     public ListAdapter(Context mContext, List<listofcountry> listList) {
         this.mContext = mContext;
         this.listList = listList;
+
     }
 
     @NonNull
@@ -42,21 +39,18 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
 
         listofcountry listofcountry = listList.get(position);
-        String imgpath = URL.imagePath + listofcountry.getFlag();
-        Log.i("image path is : ", "Image Path is " + imgpath);
+        if (listofcountry.getCountryInfo() != null && listofcountry.getCountry() != null) {
+            holder.etconname.setText(listofcountry.getCountry());
+            holder.etconfirmedcases.setText(listofcountry.getTotalCases());
+            holder.etrecoveredcases.setText(listofcountry.getTotalRecovered());
+            holder.etdeathscases.setText(listofcountry.getTotalDeaths());
+            holder.etactivecases.setText(listofcountry.getActiveCases());
+            Picasso.get().load(listofcountry.getCountryInfo().getFlag()).into(holder.conFlag);
 
-        holder.etconname.setText(listofcountry.getCountry());
-        holder.etconfirmedcases.setText(listofcountry.getTotalCases());
-        holder.etrecoveredcases.setText(listofcountry.getTotalRecovered());
-        holder.etdeathscases.setText(listofcountry.getTotalDeaths());
-        holder.etactivecases.setText(listofcountry.getActiveCases());
 
-        StrictMode.StrictMode();
-        try {
-            java.net.URL url = new java.net.URL(imgpath);
-            Picasso.get().load(String.valueOf(url)).into(holder.imgflag);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } else {
+            listList.remove(position);
+
         }
 
 
@@ -69,8 +63,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
 
     public class ListViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView imgflag;
         TextView etconname, etconfirmedcases, etrecoveredcases, etdeathscases, etactivecases, etincidentRatecases;
+        ImageView conFlag;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -79,7 +73,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
             etrecoveredcases = itemView.findViewById(R.id.etreccases);
             etdeathscases = itemView.findViewById(R.id.etdeathscases);
             etactivecases = itemView.findViewById(R.id.etactivecases);
-            imgflag = itemView.findViewById(R.id.imgflag);
+            conFlag = itemView.findViewById(R.id.imgflag);
+
+
         }
     }
 }

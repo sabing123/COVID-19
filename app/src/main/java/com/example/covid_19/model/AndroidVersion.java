@@ -5,7 +5,7 @@ public class AndroidVersion {
     private String title;
     private String source;
     private String summary;
-private String url;
+    private String url;
 
     public AndroidVersion(String title, String source, String summary, String url) {
         this.title = title;
