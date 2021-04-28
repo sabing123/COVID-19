@@ -63,7 +63,7 @@ public class NotificationsFragment extends Fragment {
 
     private void newsJSON() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://nepalcorona.info/api/v1/")
+                .baseUrl("https://corona.askbhunte.com/api/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -100,8 +100,6 @@ public class NotificationsFragment extends Fragment {
                 progressDialog.show();
 
                 Log.d("Error",t.getMessage());
-
-
             }
         });
 

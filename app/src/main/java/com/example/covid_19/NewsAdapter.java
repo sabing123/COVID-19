@@ -50,7 +50,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
             newssummary = itemView.findViewById(R.id.etnewssummary);
             newsUrl = itemView.findViewById(R.id.etnewsurl);
 
-
         }
     }
 }

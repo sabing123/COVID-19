@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class URL {
 
-        public static final String base_url = "https://nepalcorona.info/api/v1/"; //localhost ip address
+        public static final String base_url = "https://corona.askbhunte.com/api/v1/"; //localhost ip address
 
 
     public static String imagePath = "https://disease.sh/assets/img/flags/" ;
